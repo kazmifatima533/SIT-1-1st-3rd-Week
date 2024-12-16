@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Header and Footer</title>
+    <style>
+        /* Basic body styling */
+        body {
+            font-family: Arial, sans-serif;  /* Set the font for the page */
+            margin: 0;  /* Remove default margin */
+            padding: 0;  /* Remove default padding */
+            background-color: #f4f4f4;  /* Set a light gray background color */
+        }
+
+        /* Sticky Header Styling */
+        header {
+            position: sticky;  /* Make the header sticky */
+            top: 0;  /* Keep the header at the top of the page */
+            background-color: rgb(92, 55, 61);  /* Set a blue background color for the header */
+            color: white;  /* Set the text color to white */
+            text-align: center;  /* Center align the header text */
+            padding: 10px 0;  /* Add vertical padding inside the header */
+            z-index: 1000;  /* Ensure the header stays on top of other content when scrolling */
+        }
+
+        /* Sticky Footer Styling */
+        footer {
+            position: sticky;  /* Make the footer sticky */
+            bottom: 0;  /* Keep the footer at the bottom of the page */
+            background-color: rgb(92, 55, 61); /* Set a dark background color for the footer */
+            color: white;  /* Set the text color to white */
+            text-align: center;  /* Center align the footer text */
+            padding: 10px 0;  /* Add vertical padding inside the footer */
+            z-index: 1000;  /* Ensure the footer stays above other content when scrolling */
+        }
+
+        /* Main content area styling */
+        .content {
+            padding: 20px;  /* Add padding around the content */
+            min-height: 2000px;  /* Set a minimum height to make the page scrollable */
+            background-color: rgb(197, 135, 135)  /* Set a light background color for the content */
+        }
+
+        /* Container for the content */
+        .container {
+            max-width: 1200px;  /* Set a maximum width for the content */
+            margin: 0 auto;  /* Center the container horizontally */
+            background-color: white;  /* Set a white background color for the content box */
+            padding: 20px;  /* Add padding inside the container */
+            border-radius: 8px;  /* Add rounded corners to the container */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sticky Header Section -->
+<header>
+    <h1>Sticky Header</h1>  <!-- Header text -->
+</header>
+
+<!-- Main Content Section -->
+<div class="content">
+    <div class="container">
+        <h2>Welcome to the Sticky Header and Footer Example</h2>
+        <p>This page demonstrates how a header and footer can remain fixed at the top and bottom of the viewport while scrolling.</p>
+        <p>Scroll down to see the sticky footer in action.</p>
+    </div>
+</div>
+
+<!-- Sticky Footer Section -->
+<footer>
+    <p>&copy; 2024 Your Company. All rights reserved.</p>  <!-- Footer text -->
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Variables and Units</title>
+    <style>
+    /* Define CSS Variables for reusability and consistency */
+    :root {
+        --primary-color: #0f2f44;  /* Primary color for header and links */
+        --secondary-color:#0f2f44;  /* Secondary color for footer */
+        --background-color: #f4f4f4;  /* Background color for the body */
+        --box-background-color: #bdc3c7;  /* Background color for items in the container */
+        --font-family: Arial, sans-serif;  /* Font family for the page */
+        --base-font-size: 16px;  /* Base font size for body text */
+        --heading-font-size: 2rem;  /* Font size for headings (relative to base font size) */
+        --spacing: 1rem;  /* Spacing for padding and margins */
+        --container-max-width: 1200px;  /* Maximum width of the container */
+    }
+
+    /* Body styling */
+    body {
+        font-family: var(--font-family);  /* Apply the font family defined in variables */
+        font-size: var(--base-font-size);  /* Set the base font size for body */
+        background-color: var(--background-color);  /* Set background color */
+        margin: 0;  /* Remove default margin */
+        padding: 0;  /* Remove default padding */
+    }
+
+    /* Header styling */
+    header {
+        background-color: var(--primary-color);  /* Set header background color */
+        color: white;  /* Set header text color */
+        padding: var(--spacing);  /* Apply spacing for padding */
+        text-align: center;  /* Center the text inside the header */
+    }
+
+    /* Navigation styling */
+    header nav ul {
+        list-style-type: none;  /* Remove list bullet points */
+        padding: 0;  /* Remove padding */
+        text-align: center;  /* Center the navigation links */
+    }
+
+    header nav ul li {
+        display: inline;  /* Display list items inline */
+        margin: 0 1.5rem;  /* Add space between navigation items */
+    }
+
+    header nav ul li a {
+        color: white;  /* Set link text color to white */
+        text-decoration: none;  /* Remove underlines from links */
+    }
+
+    /* Main container for the items */
+    .container {
+        max-width: var(--container-max-width);  /* Limit container width */
+        margin: var(--spacing) auto;  /* Add margin on top and bottom, center horizontally */
+        padding: 0 var(--spacing);  /* Add padding on the left and right */
+        text-align: center;  /* Center the content inside the container */
+    }
+
+    /* Box items inside the container */
+    .container div {
+        background-color: var(--box-background-color);  /* Set background color for each item */
+        padding: var(--spacing);  /* Add padding inside the box */
+        margin: var(--spacing) auto;  /* Add spacing between items */
+        width: 100%;  /* Make each box take the full width available */
+        max-width: 300px;  /* Limit the width of each box */
+    }
+
+    /* Footer styling */
+    footer {
+        background-color: var(--secondary-color);  /* Set footer background color */
+        color: white;  /* Set footer text color */
+        text-align: center;  /* Center the text inside the footer */
+        padding: var(--spacing);  /* Add padding inside the footer */
+    }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">About Us</a></li>  <!-- Navigation item 1 -->
+            <li><a href="#">Contact Us</a></li>  <!-- Navigation item 2 -->
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div>Item 1</div>  <!-- Box item 1 -->
+    <div>Item 2</div>  <!-- Box item 2 -->
+    <div>Item 3</div>  <!-- Box item 3 -->
+    <div>Item 4</div>  <!-- Box item 4 -->
+    <div>Item 5</div>  <!-- Box item 5 -->
+    <div>Item 6</div>  <!-- Box item 6 -->
+</div>
+
+<footer>
+    <p>&copy; 2024 Your Company. All rights reserved.</p>  <!-- Footer text -->
+</footer>
+
+</body>
+</html>

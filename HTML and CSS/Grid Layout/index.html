@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid-Based Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            height: 100vh;
+            grid-template-areas:
+                "header"
+                "main"
+                "footer";
+        }
+
+        header {
+            grid-area: header;
+            background-color: rgb(150, 137, 64);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        main {
+            grid-area: main;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        main .card {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        main .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        main .card p {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: rgb(158, 122, 30);
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: rgb(150, 137, 64);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                grid-template-rows: auto 1fr auto;
+            }
+
+            main {
+                grid-template-columns: 1fr; /* Single column layout */
+            }
+
+            main .card {
+                padding: 0.8rem;
+            }
+
+            main .card p {
+                font-size: 1rem; /* Adjust font size for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, footer {
+                padding: 0.5rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem; /* Smaller header font size */
+            }
+
+            main .card img {
+                margin-bottom: 0.3rem;
+            }
+
+            footer {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jewellery Shop</h1>
+    </header>
+
+    <main>
+        <div class="card">
+            <img src="neck.jpg" alt="Necklace">
+            <p>Necklace</p>
+        </div>
+        <div class="card">
+            <img src="brac.jpg" alt="Bracelets">
+            <p>Bracelets</p>
+        </div>
+        <div class="card">
+            <img src="anke.jpg" alt="Anklet">
+            <p>Anklet</p>
+        </div>
+        <div class="card">
+            <img src="ring.jpg" alt="Rings">
+            <p>Rings</p>
+        </div>
+        <div class="card">
+            <img src="earings.avif" alt="Earings">
+            <p>Earings</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Website</p>
+    </footer>
+</body>
+</html>

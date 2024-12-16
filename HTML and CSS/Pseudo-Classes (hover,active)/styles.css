@@ -1,0 +1,103 @@
+/* General styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+}
+
+/* Button with enhanced states */
+.styled-button {
+    background-color: #007BFF;/* Default background color */
+    color: white;/* Text color */
+    border: none;
+    padding: 10px 20px;/* Spacing inside the button */
+    font-size: 16px;
+    cursor: pointer;/* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s;/* Smooth transitions */
+}
+
+/* Hover effect for button */
+.styled-button:hover {
+    background-color: #0056b3;/* Darker blue on hover */
+    transform: translateY(-2px);/* Slight upward movement */
+}
+
+/* Active state for button (when clicked) */
+.styled-button:active {
+    background-color: #003d80;/* Darker blue when pressed */
+    transform: translateY(2px);/* Slight downward movement */
+}
+
+/* Focus state for accessibility */
+.styled-button:focus {
+    outline: 2px dashed #0056b3;/* Dashed border */
+    outline-offset: 2px;/* Spacing between border and button */
+}
+
+/* Disabled button state */
+.styled-button:disabled {
+    background-color: #cccccc;/* Grey background */
+    cursor: not-allowed; /* Disabled cursor */
+}
+
+/* Link with decorative hover effect */
+.styled-link {
+    color: #007BFF;/* Default link color */
+    text-decoration: none;/* Remove underline */
+    position: relative; /* For positioning pseudo-elements */
+}
+
+/* Decorative underline animation using ::before pseudo-element */
+.styled-link::before {
+    content: ''; /* Empty content for the decorative line */
+    position: absolute;
+    bottom: 0;/* Position at the bottom of the text */
+    left: 0;
+    width: 100%; /* Full width of the link */
+    height: 2px;/* Thickness of the line */
+    background-color: #007BFF;/* Match the link color */
+    transform: scaleX(0);/* Initially hidden */
+    transform-origin: right;/* Start animation from the right */
+    transition: transform 0.3s;/* Smooth animation */
+}
+
+/* Hover effect to reveal the line */
+.styled-link:hover::before {
+    transform: scaleX(1);/* Expand the line */
+    transform-origin: left;/* Animate from left to right */
+}
+
+/* Button with an icon effect */
+.icon-button {
+    background-color: #28a745;/* Green background */
+    color: white;/* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative; /* For positioning the icon */
+    overflow: hidden; /* Hide parts of the icon outside the button */
+}
+
+/* Icon appearing on hover using ::after pseudo-element */
+.icon-button::after {
+    content: '✓'; /* Checkmark icon */
+    position: absolute;
+    right: -30px; /* Position outside the button initially */
+    opacity: 0; /* Hidden by default */
+    transition: right 0.3s, opacity 0.3s;/* Smooth entrance */
+}
+
+/* Reveal the icon on hover */
+.icon-button:hover::after {
+    right: 10px;/* Move the icon inside the button */
+    opacity: 1;/* Make it visible */
+}

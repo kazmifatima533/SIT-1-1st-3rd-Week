@@ -1,0 +1,120 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    /* Light gray background */
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Section */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+    /* Gold color for hover effect */
+}
+
+/* Main Content Section */
+main {
+    padding: 40px 0;
+    background-color: white;
+}
+
+/* Grid Layout Styling */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns for large screens */
+    gap: 20px;
+}
+
+.item {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.item:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Darker shadow on hover */
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+        /* 1 column for mobile */
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
